@@ -84,7 +84,7 @@ for /f "delims=: tokens=1,*" %%a in ('fsutil fsinfo drives') do (
             set "gameDir=%%~dc\%%~e\Guild Wars 2"
             if exist "!gameDir!" (
                 set "addonDir=!gameDir!\addons\gw2radial"
-                if exist "!addonDir!" (
+                if exist "!addonDir!\d3d9.dll" (
                     call :UpdateFiles "!addonDir!" d3d9
                 ) else (
                     set "addonDir=!gameDir!\bin"
@@ -105,9 +105,9 @@ exit /b %errorlevel%
 :UpdateFiles
 if not exist "%~1" goto :EOF
 set fileName=$(TargetName)
-for %%f in (.dll .pdb) do (
-    set srcPath="$(OutDir)!fileName!%%f"
-    set destPath="%~1\%~2%%f"
+for %%x in (.dll .pdb) do (
+    set srcPath="$(OutDir)!fileName!%%x"
+    set destPath="%~1\%~2%%x"
     if exist !srcPath! (
         if exist !destPath! (
             copy /Y !srcPath! !destPath!
@@ -151,7 +151,7 @@ for /f "delims=: tokens=1,*" %%a in ('fsutil fsinfo drives') do (
             set "gameDir=%%~dc\%%~e\Guild Wars 2"
             if exist "!gameDir!" (
                 set "addonDir=!gameDir!\addons\gw2radial"
-                if exist "!addonDir!" (
+                if exist "!addonDir!\d3d9.dll" (
                     call :UpdateFiles "!addonDir!" d3d9
                 ) else (
                     set "addonDir=!gameDir!\bin"
@@ -172,9 +172,9 @@ exit /b %errorlevel%
 :UpdateFiles
 if not exist "%~1" goto :EOF
 set fileName=$(TargetName)
-for %%f in (.dll .pdb) do (
-    set srcPath="$(OutDir)!fileName!%%f"
-    set destPath="%~1\%~2%%f"
+for %%x in (.dll .pdb) do (
+    set srcPath="$(OutDir)!fileName!%%x"
+    set destPath="%~1\%~2%%x"
     if exist !srcPath! (
         if exist !destPath! (
             copy /Y !srcPath! !destPath!
