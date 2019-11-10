@@ -19,6 +19,8 @@
 #include <MiscTab.h>
 #include <MumbleLink.h>
 #include <Effect_dx12.h>
+#include "ArmorTemplate.h"
+#include "BuildTemplate.h"
 
 namespace GW2Radial
 {
@@ -175,6 +177,8 @@ void Core::OnDeviceSet(IDirect3DDevice9 *device, D3DPRESENT_PARAMETERS *presenta
 	UpdateCheck::i()->CheckForUpdates();
 	MiscTab::i();
 
+	wheels_.emplace_back(Wheel::Create<ArmorTemplate>(IDR_BG, IDR_INK, "armor_templates", "Armor Templates", device));
+	wheels_.emplace_back(Wheel::Create<BuildTemplate>(IDR_BG, IDR_INK, "build_templates", "Build Templates", device));
 	wheels_.emplace_back(Wheel::Create<Mount>(IDR_BG, IDR_INK, "mounts", "Mounts", device));
 	wheels_.emplace_back(Wheel::Create<Novelty>(IDR_BG, IDR_INK, "novelties", "Novelties", device));
 	wheels_.emplace_back(Wheel::Create<Marker>(IDR_BG, IDR_INK, "markers", "Markers", device));

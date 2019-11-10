@@ -115,6 +115,8 @@ copy /Y $(OutDir)$(TargetName).pdb "C:\Program Files\Guild Wars 2\bin64\d3d9_cha
     </FxCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\ArmorTemplate.cpp" />
+    <ClCompile Include="src\BuildTemplate.cpp" />
     <ClCompile Include="imgui\examples\imgui_impl_win32.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
     <ClCompile Include="imgui\imgui_demo.cpp" />
@@ -146,6 +148,8 @@ copy /Y $(OutDir)$(TargetName).pdb "C:\Program Files\Guild Wars 2\bin64\d3d9_cha
     <ClCompile Include="xxhash\xxhash.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="include\ArmorTemplate.h" />
+    <ClInclude Include="include\BuildTemplate.h" />
     <ClInclude Include="imgui\examples\imgui_impl_dx9.h" />
     <ClInclude Include="imgui\examples\imgui_impl_win32.h" />
     <ClInclude Include="imgui\imconfig.h" />
@@ -182,7 +186,6 @@ copy /Y $(OutDir)$(TargetName).pdb "C:\Program Files\Guild Wars 2\bin64\d3d9_cha
     <ClInclude Include="include\Utility.h" />
     <ClInclude Include="include\Wheel.h" />
     <ClInclude Include="include\WheelElement.h" />
-    <ClInclude Include="resource.h" />
     <ClInclude Include="simpleini\SimpleIni.h" />
     <ClInclude Include="xxhash\xxhash.h" />
   </ItemGroup>
@@ -264,6 +267,18 @@ copy /Y $(OutDir)$(TargetName).pdb "C:\Program Files\Guild Wars 2\bin64\d3d9_cha
     <Image Include="art\Finals\triangle_marker.dds" />
     <Image Include="art\Finals\Warclaw.dds" />
     <Image Include="art\Finals\x_marker.dds" />
+    <Image Include="art\Finals\armor_1.dds" />
+    <Image Include="art\Finals\armor_2.dds" />
+    <Image Include="art\Finals\armor_3.dds" />
+    <Image Include="art\Finals\armor_4.dds" />
+    <Image Include="art\Finals\armor_5.dds" />
+    <Image Include="art\Finals\armor_6.dds" />
+    <Image Include="art\Finals\build_1.dds" />
+    <Image Include="art\Finals\build_2.dds" />
+    <Image Include="art\Finals\build_3.dds" />
+    <Image Include="art\Finals\build_4.dds" />
+    <Image Include="art\Finals\build_5.dds" />
+    <Image Include="art\Finals\build_6.dds" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="art\Fonts\SourceSansPro-Black.ttf" />

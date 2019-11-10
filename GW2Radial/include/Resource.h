@@ -38,6 +38,22 @@
 #define IDR_MARKER8		238
 #define IDR_MARKER9		239
 
+#define IDR_ARMORS		241
+#define IDR_ARMOR1		241
+#define IDR_ARMOR2		242
+#define IDR_ARMOR3		243
+#define IDR_ARMOR4		244
+#define IDR_ARMOR5		245
+#define IDR_ARMOR6		246
+
+#define IDR_BUILDS		251
+#define IDR_BUILD1		251
+#define IDR_BUILD2		252
+#define IDR_BUILD3		253
+#define IDR_BUILD4		254
+#define IDR_BUILD5		255
+#define IDR_BUILD6		256
+
 #define IDR_FONT		300
 #define IDR_FONT_BLACK	301
 #define IDR_FONT_ITALIC	302

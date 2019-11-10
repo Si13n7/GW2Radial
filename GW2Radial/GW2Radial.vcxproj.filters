@@ -112,6 +112,12 @@
     <ClCompile Include="src\Effect_dx12.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\BuildTemplate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ArmorTemplate.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="imgui\imgui_internal.h">
@@ -228,8 +234,11 @@
     <ClInclude Include="include\Effect_dx12.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="resource.h">
-      <Filter>Resource Files</Filter>
+    <ClInclude Include="include\BuildTemplate.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\ArmorTemplate.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -341,6 +350,42 @@
       <Filter>Assets</Filter>
     </Image>
     <Image Include="art\Finals\Skyscale.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\armor_1.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\armor_2.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\armor_3.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\armor_4.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\armor_5.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\armor_6.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\build_1.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\build_2.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\build_3.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\build_4.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\build_5.dds">
+      <Filter>Assets</Filter>
+    </Image>
+    <Image Include="art\Finals\build_6.dds">
       <Filter>Assets</Filter>
     </Image>
   </ItemGroup>
