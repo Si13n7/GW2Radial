@@ -76,8 +76,45 @@
       <AdditionalDependencies>Wininet.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y $(TargetPath) "C:\Program Files\Guild Wars 2\bin64\d3d9_chainload.dll"
-copy /Y $(OutDir)$(TargetName).pdb "C:\Program Files\Guild Wars 2\bin64\d3d9_chainload.pdb"</Command>
+      <Command>@echo off
+setlocal enableDelayedExpansion
+for /f "delims=: tokens=1,*" %%a in ('fsutil fsinfo drives') do (
+    for %%c in (%%b) do (
+        for %%e in ("Games" "Program Files") do (
+            set "gameDir=%%~dc\%%~e\Guild Wars 2"
+            if exist "!gameDir!" (
+                set "addonDir=!gameDir!\addons\gw2radial"
+                if exist "!addonDir!" (
+                    call :UpdateFiles "!addonDir!" d3d9
+                ) else (
+                    set "addonDir=!gameDir!\bin"
+                    if exist "!addonDir!\d3d9_chainload.dll" (
+                        call :UpdateFiles "!addonDir!" d3d9_chainload
+                    ) else (
+                        call :UpdateFiles "!addonDir!" d3d9
+                    )
+                )
+            )
+        )
+    )
+)
+endlocal
+exit /b %errorlevel%
+
+
+:UpdateFiles
+if not exist "%~1" goto :EOF
+set fileName=$(TargetName)
+for %%f in (.dll .pdb) do (
+    set srcPath="$(OutDir)!fileName!%%f"
+    set destPath="%~1\%~2%%f"
+    if exist !srcPath! (
+        if exist !destPath! (
+            copy /Y !srcPath! !destPath!
+        )
+    )
+)
+goto :EOF</Command>
     </PostBuildEvent>
     <FxCompile>
       <ObjectFileOutput>$(ProjectDir)int\%(Filename).cso</ObjectFileOutput>
@@ -106,8 +143,45 @@ copy /Y $(OutDir)$(TargetName).pdb "C:\Program Files\Guild Wars 2\bin64\d3d9_cha
       <AdditionalDependencies>Wininet.lib;Shlwapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>copy /Y $(TargetPath) "C:\Program Files\Guild Wars 2\bin64\d3d9_chainload.dll"
-copy /Y $(OutDir)$(TargetName).pdb "C:\Program Files\Guild Wars 2\bin64\d3d9_chainload.pdb"</Command>
+      <Command>@echo off
+setlocal enableDelayedExpansion
+for /f "delims=: tokens=1,*" %%a in ('fsutil fsinfo drives') do (
+    for %%c in (%%b) do (
+        for %%e in ("Games" "Program Files") do (
+            set "gameDir=%%~dc\%%~e\Guild Wars 2"
+            if exist "!gameDir!" (
+                set "addonDir=!gameDir!\addons\gw2radial"
+                if exist "!addonDir!" (
+                    call :UpdateFiles "!addonDir!" d3d9
+                ) else (
+                    set "addonDir=!gameDir!\bin"
+                    if exist "!addonDir!\d3d9_chainload.dll" (
+                        call :UpdateFiles "!addonDir!" d3d9_chainload
+                    ) else (
+                        call :UpdateFiles "!addonDir!" d3d9
+                    )
+                )
+            )
+        )
+    )
+)
+endlocal
+exit /b %errorlevel%
+
+
+:UpdateFiles
+if not exist "%~1" goto :EOF
+set fileName=$(TargetName)
+for %%f in (.dll .pdb) do (
+    set srcPath="$(OutDir)!fileName!%%f"
+    set destPath="%~1\%~2%%f"
+    if exist !srcPath! (
+        if exist !destPath! (
+            copy /Y !srcPath! !destPath!
+        )
+    )
+)
+goto :EOF</Command>
     </PostBuildEvent>
     <FxCompile>
       <ObjectFileOutput>$(ProjectDir)int\%(Filename).cso</ObjectFileOutput>
