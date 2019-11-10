@@ -8,11 +8,6 @@ namespace GW2Radial
 		: WheelElement(uint(m), std::string("armortemplate_") + GetArmorTemplateNicknameFromType(m), "ArmorTemplates", GetArmorTemplateNameFromType(m), dev)
 	{ }
 
-	bool ArmorTemplate::isActive() const
-	{
-		return WheelElement::isActive();
-	}
-
 	template<>
 	void Wheel::Setup<ArmorTemplate>(IDirect3DDevice9* dev)
 	{

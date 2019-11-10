@@ -25,8 +25,6 @@ namespace GW2Radial
 	public:
 		ArmorTemplate(ArmorTemplateType m, IDirect3DDevice9* dev);
 
-		bool isActive() const override;
-
 	protected:
 		static const char* GetArmorTemplateNameFromType(ArmorTemplateType m)
 		{

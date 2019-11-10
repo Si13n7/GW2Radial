@@ -8,11 +8,6 @@ namespace GW2Radial
 		: WheelElement(uint(m), std::string("buildtemplate_") + GetBuildTemplateNicknameFromType(m), "BuildTemplates", GetBuildTemplateNameFromType(m), dev)
 	{ }
 
-	bool BuildTemplate::isActive() const
-	{
-		return WheelElement::isActive();
-	}
-
 	template<>
 	void Wheel::Setup<BuildTemplate>(IDirect3DDevice9* dev)
 	{

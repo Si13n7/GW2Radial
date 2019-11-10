@@ -25,8 +25,6 @@ namespace GW2Radial
 	public:
 		BuildTemplate(BuildTemplateType m, IDirect3DDevice9* dev);
 
-		bool isActive() const override;
-
 	protected:
 		static const char* GetBuildTemplateNameFromType(BuildTemplateType m)
 		{
